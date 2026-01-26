@@ -1,352 +1,410 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="x-apple-disable-message-reformatting" />
-  <title>Fresh Start Deal 2026</title>
-  <style>
-    /* Client resets */
-    body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
-    table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
-    img { -ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; }
-    table { border-collapse: collapse !important; }
-    body { margin: 0 !important; padding: 0 !important; width: 100% !important; height: 100% !important; }
-.logo {
-  display: block;
-  max-width: 160px;
-  width: 100%;
-  height: auto;
-  margin-bottom: 12px;
-}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>BG Tax Mail Dashboard</title>
 
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-/* 6amTech-inspired text highlight */
-.accent {
-  color: #F0B050;
-  font-weight: 800;
-}
+    <style>
+        /* nicer scrollbars (optional) */
+        .nice-scroll::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
 
-/* Optional: soft marker highlight (looks premium) */
-.marker {
-  background: rgba(240, 176, 80, 0.18);
-  border: 1px solid rgba(240, 176, 80, 0.35);
-  padding: 2px 8px;
-  border-radius: 999px;
-  font-weight: 800;
-  color: #111827;
-  white-space: nowrap;
-}
+        .nice-scroll::-webkit-scrollbar-thumb {
+            background: #d1d5db;
+            border-radius: 999px;
+        }
 
-/* For strong emphasis line (like “Sound familiar?”) */
-.accentQ {
-  color: #7080E0;
-  font-weight: 900;
-}
-
-
-    /* Typography */
-    .font { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-    .h1 { font-size: 22px; line-height: 1.25; font-weight: 800; margin: 0; }
-    .h2 { font-size: 16px; line-height: 1.35; font-weight: 700; margin: 0; color:#111827; }
-    .p  { font-size: 15px; line-height: 1.6; margin: 0; color: #111827; }
-    .muted { color: #6B7280; }
-
-    /* Layout */
-    .wrap { width: 100%; background: #0B1220; padding: 0; }
-    .container { width: 100%; max-width: 640px; margin: 0 auto; }
-    .card { background: #FFFFFF; border-radius: 18px; overflow: hidden; }
-    .pad { padding: 22px; }
-
-    /* Banner */
-    .banner {
-      background: linear-gradient(135deg, #6D28D9 0%, #2563EB 50%, #06B6D4 100%);
-      color: #FFFFFF;
-      padding: 26px 22px;
-    }
-    .badge {
-      display: inline-block;
-      background: rgba(255,255,255,.16);
-      border: 1px solid rgba(255,255,255,.20);
-      color: #FFFFFF;
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 12px;
-      letter-spacing: .2px;
-      font-weight: 700;
-    }
-    .bannerTitle { font-size: 24px; line-height: 1.25; font-weight: 900; margin: 10px 0 0 0; }
-    .bannerSub { font-size: 14px; line-height: 1.6; margin: 10px 0 0 0; opacity: .92; }
-
-    /* Highlights */
-    .pill {
-      display: inline-block;
-      background: #3d895c;
-      color: #FFF200;
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 700;
-      margin: 0 8px 10px 0;
-    }
-    .divider { height: 1px; background: #E5E7EB; margin: 18px 0; }
-
-    /* CTA Button */
-    .btn {
-      display: inline-block;
-      background: #003F19;
-      color: #FFF200 !important;
-      text-decoration: none;
-      padding: 14px 18px;
-      border-radius: 12px;
-      font-weight: 800;
-      font-size: 15px;
-    }
-    .btnWrap { padding: 14px 0 6px 0; }
-
-    /* Secondary box */
-    .softBox {
-      background: #FFF0E6;
-      border: 1px solid #E5E7EB;
-      border-radius: 14px;
-      padding: 16px;
-    }
-
-    /* “Launch list” highlight cards (email-safe) */
-    .launchCard {
-      background:#F0FFF4;
-      border-left:6px solid #003F19;
-      border-radius:12px;
-      padding:14px;
-    }
-    .launchTitle { font-weight:800; margin:0 0 4px 0; }
-    .launchSub { font-size:14px; margin:0; color:#6B7280; line-height:1.5; }
-
-    /* Footer */
-    .footer {
-      padding: 16px 22px 22px 22px;
-      color: #94A3B8;
-      font-size: 12px;
-      line-height: 1.6;
-    }
-
-    /* Mobile */
-    @media screen and (max-width: 480px) {
-      .pad { padding: 18px; }
-      .banner { padding: 22px 18px; }
-      .bannerTitle { font-size: 22px; }
-      .p { font-size: 15px; }
-      .btn { display: block; text-align: center; }
-    }
-  </style>
+        .nice-scroll::-webkit-scrollbar-track {
+            background: #f3f4f6;
+            border-radius: 999px;
+        }
+    </style>
 </head>
 
-<body class="font" style="background:#0B1220;">
-  <center class="wrap">
-    <table role="presentation" class="container" cellpadding="0" cellspacing="0" border="0">
-      <tr>
-        <td style="padding: 18px 12px;">
+<body class="bg-slate-50 text-slate-900">
+    <div class="min-h-screen flex">
 
-          <!-- CARD -->
-          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="card">
-
-            <!-- TEXT BANNER -->
-            <tr>
-              <td class="banner">
-
-  <img
-    src="https://businessglobalizer.com/wp-content/uploads/2026/01/Logo-Redesign-Business-Globalizer-01.png"
-    alt="Business Globalizer"
-    class="logo"
-  />
-
-  <span class="badge">Business Globalizer × 6amTech</span>
-
-  <h1 class="bannerTitle">Launch Faster. Spend Less.</h1>
-
-  <p class="bannerSub">
-    Ready-to-use business platforms are now available at <b>half price</b> for a limited time — built for fast launches without heavy development.
-  </p>
-
-</td>
-
-            </tr>
-
-            <!-- BODY -->
-            <tr>
-              <td class="pad">
-
-                <p style="font-size:15px;line-height:1.6;color:#111827;margin:0;">
-  Hi,<b> {{ contact.FIRSTNAME }}
-</b><br>
-  I hope you're doing well.
-</p>
-
-<div style="height:14px;"></div>
-
-<p style="font-size:15px;line-height:1.6;color:#111827;margin:0;">
-  Here's what we're seeing: a lot of founders reach out saying they want to launch or expand,
-  but without stretching their team thin or blowing the budget.
-  <span style="color:#7080E0;font-weight:900;">Sound familiar?</span>
-</p>
-
-<div style="height:12px;"></div>
-
-<p style="font-size:15px;line-height:1.6;color:#111827;margin:0;">
- That's exactly why I wanted to share something from 
-<span style="font-weight:900;">
-  <span style="color:#221F1F;">6am</span><span style="color:#f7931e;">Tech</span>
-</span>,
-our long-time partner.
-  They just made their
-  <span style="padding:2px 8px;border-radius:999px;font-weight:800;color:#111827;white-space:nowrap;">
-    ready-to-use business platforms
-  </span>
-  available at
-  <span style="padding:2px 8px;border-radius:999px;font-weight:800;color:#111827;white-space:nowrap;">
-    half price
-  </span>
-  for a limited window.
-</p>
-
-<div style="height:14px;"></div>
-
-<!-- Highlight Box -->
-<div style="background:#FFF0E6;border:1px solid #E5E7EB;border-radius:14px;padding:16px;">
-  <p style="font-size:16px;line-height:1.5;margin:0;font-weight:900;color:#111827;">
-    <span style="color:#f7931e;">And honestly?</span> These aren’t experimental tools.
-  </p>
-
-  <div style="height:8px;"></div>
-
-  <p style="font-size:14px;line-height:1.6;margin:0;color:#6B7280;">
-    These are the same systems founders in our network are using right now to go from idea to live platform —
-    without building everything from zero.
-  </p>
-</div>
-
-
-                <div class="divider"></div>
-
-                <p class="h2">Here’s what you can actually launch</p>
-
-                <div style="height:12px;"></div>
-
-                <!-- HIGHLIGHT PILLS -->
-                <div>
-                  <span class="pill">Ready-to-use</span>
-                  <span class="pill">Flexible</span>
-                  <span class="pill">Scalable</span>
-                  <span class="pill">Proven</span>
+        <!-- Sidebar -->
+        <aside class="w-[360px] max-w-full border-r border-slate-200 bg-white">
+            <div class="p-5 border-b border-slate-200">
+                <div class="flex items-center gap-3">
+                    <div
+                        class="h-10 w-10 rounded-xl bg-gradient-to-br from-indigo-600 to-cyan-500 flex items-center justify-center text-white font-black">
+                        BG
+                    </div>
+                    <div>
+                        <div class="text-lg font-extrabold leading-tight">Tax Mail Dashboard</div>
+                        <div class="text-xs text-slate-500">List, preview, and open email templates</div>
+                    </div>
                 </div>
 
-                <div style="height:10px;"></div>
-
-                <!-- LAUNCH LIST (HIGHLIGHTED) -->
-                <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
-
-                  <tr>
-                    <td class="launchCard">
-                      <p class="p launchTitle">🛒 Online stores & multi-vendor marketplaces</p>
-                      <p class="launchSub">Think Amazon / Etsy style marketplaces with sellers & product management.</p>
-                    </td>
-                  </tr>
-                  <tr><td style="height:10px;"></td></tr>
-
-                  <tr>
-                    <td class="launchCard">
-                      <p class="p launchTitle">🚚 Food, grocery & delivery platforms</p>
-                      <p class="launchSub">Uber Eats / DoorDash type ordering + delivery workflow.</p>
-                    </td>
-                  </tr>
-                  <tr><td style="height:10px;"></td></tr>
-
-                  <tr>
-                    <td class="launchCard">
-                      <p class="p launchTitle">🍽 Restaurant ordering & delivery ecosystems</p>
-                      <p class="launchSub">foodpanda / Deliveroo vibes — menu, orders, delivery, and operations.</p>
-                    </td>
-                  </tr>
-                  <tr><td style="height:10px;"></td></tr>
-
-                  <tr>
-                    <td class="launchCard">
-                      <p class="p launchTitle">🛠 Service booking & on-demand solutions</p>
-                      <p class="launchSub">TaskRabbit / Thumbtack style services with bookings & scheduling.</p>
-                    </td>
-                  </tr>
-                  <tr><td style="height:10px;"></td></tr>
-
-                  <tr>
-                    <td class="launchCard">
-                      <p class="p launchTitle">🚗 Ride-sharing & parcel delivery services</p>
-                      <p class="launchSub">Uber / Careem territory for rides + logistics and parcel operations.</p>
-                    </td>
-                  </tr>
-
-                </table>
-
-                <div class="divider"></div>
-
-                <p class="p">
-                  The platforms are <b>proven</b>, <b>flexible</b>, and <b>built to scale</b>.
-                  Whether you're launching your first business or moving into a profitable new market, they handle the heavy lifting so you can focus on growth.
-                </p>
-
-                <div style="height:14px;"></div>
-
-                <p class="p">
-                  We're sharing this because it genuinely works for people in our community.
-                  If you're thinking about a launch—or know someone who is—this could save weeks and money.
-                </p>
-
-                <div style="height:14px;"></div>
-
-                <p class="p" style="font-weight:800;">
-                  Want to see what's available?
-                </p>
-
-                <div class="btnWrap">
-                  <a class="btn" href="https://6amtech.com/fresh-start-deal-2026/?utm_source=business-globalizer&utm_medium=reference&utm_campaign=fresh-start-26-bg" target="_blank" rel="noopener">
-                    View Fresh Start Deal 2026 →
-                  </a>
+                <!-- Search -->
+                <div class="mt-4">
+                    <label class="text-xs font-semibold text-slate-600">Search</label>
+                    <div
+                        class="mt-1 flex items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 focus-within:ring-2 focus-within:ring-indigo-200">
+                        <svg class="h-4 w-4 text-slate-500" viewBox="0 0 24 24" fill="none">
+                            <path d="M21 21l-4.3-4.3m1.8-5.2a7 7 0 11-14 0 7 7 0 0114 0z" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                        <input id="searchInput" class="w-full bg-transparent outline-none text-sm"
+                            placeholder="Search by title or preview..." />
+                    </div>
                 </div>
 
-            
+                <!-- Controls -->
+                <div class="mt-3 flex gap-2">
+                    <button id="refreshBtn"
+                        class="flex-1 rounded-xl bg-slate-900 text-white text-sm font-bold py-2 hover:bg-slate-800">
+                        Refresh
+                    </button>
+                    <button id="sortBtn"
+                        class="rounded-xl border border-slate-200 bg-white text-sm font-bold py-2 px-3 hover:bg-slate-50">
+                        Sort A→Z
+                    </button>
+                </div>
+            </div>
 
-                <div class="divider"></div>
+            <!-- List -->
+            <div class="p-3">
+                <div class="flex items-center justify-between px-2 pb-2">
+                    <div class="text-xs font-semibold text-slate-500">EMAIL FILES</div>
+                    <div id="countBadge"
+                        class="text-xs font-bold text-slate-700 bg-slate-100 border border-slate-200 rounded-full px-2 py-1">
+                        0</div>
+                </div>
 
-                <p class="p">
-                  Questions about global setup, expansion strategy, or compliance? <b>We're here for it.</b>
-                </p>
+                <div id="mailList" class="nice-scroll overflow-auto h-[calc(100vh-220px)] pr-1">
+                    <!-- items injected -->
+                </div>
+            </div>
+        </aside>
 
-                <div style="height:18px;"></div>
+        <!-- Main -->
+        <main class="flex-1">
+            <!-- Top bar -->
+            <div class="sticky top-0 z-10 bg-white/90 backdrop-blur border-b border-slate-200">
+                <div class="px-6 py-4 flex items-center justify-between gap-3">
+                    <div>
+                        <div id="activeTitle" class="text-lg font-extrabold">Select an email</div>
+                        <div id="activeMeta" class="text-xs text-slate-500">Preview will appear here</div>
+                    </div>
 
-                <p class="p" style="margin:0;">
-                  Warm regards,<br>
-                  <b>Abdullah Al Mamun</b><br>
-                  CEO, Business Globalizer
-                </p>
+                    <div class="flex items-center gap-2">
+                        <a id="openRawBtn" href="#" target="_blank"
+                            class="hidden rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-bold hover:bg-slate-50">
+                            Open HTML
+                        </a>
+                        <button id="copyPreviewBtn"
+                            class="hidden rounded-xl bg-indigo-600 text-white px-4 py-2 text-sm font-bold hover:bg-indigo-500">
+                            Copy Preview Text
+                        </button>
+                    </div>
+                </div>
+            </div>
 
-              </td>
-            </tr>
+            <!-- Content area -->
+            <div class="p-6">
+                <!-- Stats row -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="rounded-2xl border border-slate-200 bg-white p-4">
+                        <div class="text-xs font-semibold text-slate-500">Total Templates</div>
+                        <div id="statTotal" class="mt-1 text-2xl font-black">0</div>
+                    </div>
+                    <div class="rounded-2xl border border-slate-200 bg-white p-4">
+                        <div class="text-xs font-semibold text-slate-500">Selected File</div>
+                        <div id="statSelected" class="mt-1 text-lg font-extrabold text-slate-800">—</div>
+                    </div>
+                    <div class="rounded-2xl border border-slate-200 bg-white p-4">
+                        <div class="text-xs font-semibold text-slate-500">Preview Length</div>
+                        <div id="statLen" class="mt-1 text-2xl font-black">0</div>
+                    </div>
+                </div>
 
-            <!-- FOOTER -->
-            <tr>
-              <td class="footer" style="background:#0B1220;">
-                <span style="display:block; font-weight:700; color:#E2E8F0;">Business Globalizer</span>
-                <span style="display:block; margin-top:6px;">
-                  You’re receiving this email because you’re in our network/community. If this isn’t relevant, you can ignore it.
-                </span>
-              </td>
-            </tr>
+                <!-- Viewer -->
+                <div class="mt-6 grid grid-cols-1 xl:grid-cols-2 gap-6">
+                    <!-- Rendered view -->
+                    <section class="rounded-2xl border border-slate-200 bg-white overflow-hidden">
+                        <div class="px-5 py-4 border-b border-slate-200 flex items-center justify-between">
+                            <div>
+                                <div class="font-extrabold">Rendered Preview</div>
+                                <div class="text-xs text-slate-500">Your email HTML in a safe iframe</div>
+                            </div>
+                            <div class="text-xs font-semibold text-slate-500">Email-safe preview</div>
+                        </div>
+                        <div class="p-4">
+                            <iframe id="viewer" title="Email Preview"
+                                class="w-full h-[680px] rounded-xl border border-slate-200 bg-white"></iframe>
+                        </div>
+                    </section>
 
-          </table>
-          <!-- /CARD -->
+                    <!-- Text preview -->
+                    <section class="rounded-2xl border border-slate-200 bg-white overflow-hidden">
+                        <div class="px-5 py-4 border-b border-slate-200">
+                            <div class="font-extrabold">Auto Preview Text</div>
+                            <div class="text-xs text-slate-500">Generated automatically from the HTML content</div>
+                        </div>
+                        <div class="p-5">
+                            <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                                <div class="text-xs font-semibold text-slate-500">PREVIEW SNIPPET</div>
+                                <p id="previewText" class="mt-2 text-sm leading-6 text-slate-700">
+                                    Select an email from the left list to see preview text.
+                                </p>
+                            </div>
 
-        </td>
-      </tr>
-    </table>
-  </center>
+                            <div class="mt-4">
+                                <div class="text-xs font-semibold text-slate-500">FULL EXTRACTED TEXT (Scrollable)</div>
+                                <div id="fullText"
+                                    class="nice-scroll mt-2 h-[520px] overflow-auto rounded-2xl border border-slate-200 bg-white p-4 text-sm leading-6 text-slate-700">
+                                    —
+                                </div>
+                            </div>
+
+                            <div class="mt-4 text-xs text-slate-500">
+                                Tip: If you add more files, just update the <b>files[]</b> list in the script.
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // 1) Your email template files (same folder as this dashboard file)
+        // Add more like: "7.html", "tax-offer.html"
+        // const files = ["1.html", "2.html", "3.html", "4.html", "5.html"];
+
+        const files = [
+            "bgTaxmail/1.html",
+            "bgTaxmail/2.html",
+            "bgTaxmail/3.html",
+            "bgTaxmail/4.html",
+            "bgTaxmail/5.html",
+            "bgTaxmail/6.html"
+
+        ];
+
+
+        let state = {
+            items: [],
+            filtered: [],
+            sortAZ: true,
+            active: null,
+        };
+
+        const el = (id) => document.getElementById(id);
+
+        function stripHtmlToText(html) {
+            const doc = new DOMParser().parseFromString(html, "text/html");
+            // remove non-text junk
+            doc.querySelectorAll("script, style, noscript").forEach(n => n.remove());
+            const text = (doc.body ? doc.body.textContent : "").replace(/\s+/g, " ").trim();
+            const title =
+                (doc.querySelector("title")?.textContent || "").trim() ||
+                (doc.querySelector("h1,h2")?.textContent || "").trim() ||
+                "Untitled Email";
+            return { title, text };
+        }
+
+        function makeSnippet(text, max = 180) {
+            if (!text) return "";
+            if (text.length <= max) return text;
+            return text.slice(0, max).trim() + "…";
+        }
+
+        async function loadAll() {
+            // Try to fetch each file. Works on localhost / server.
+            const results = [];
+            for (const file of files) {
+                try {
+                    const res = await fetch(file, { cache: "no-store" });
+                    if (!res.ok) throw new Error("HTTP " + res.status);
+                    const html = await res.text();
+                    const { title, text } = stripHtmlToText(html);
+                    results.push({
+                        file,
+                        title,
+                        snippet: makeSnippet(text, 160),
+                        fullText: text,
+                        html
+                    });
+                } catch (e) {
+                    results.push({
+                        file,
+                        title: file,
+                        snippet: "Could not load. Run with Live Server (localhost).",
+                        fullText: "",
+                        html: `<div style="font-family:Arial;padding:20px;">
+                    <b>Could not load ${file}</b><br/>
+                    Please run using VS Code Live Server or any local server.<br/>
+                    Error: ${String(e)}
+                  </div>`
+                    });
+                }
+            }
+
+            state.items = results;
+            applySort();
+            applyFilter();
+            renderList();
+            updateStats();
+        }
+
+        function applySort() {
+            const sorted = [...state.items].sort((a, b) => {
+                const A = (a.title || "").toLowerCase();
+                const B = (b.title || "").toLowerCase();
+                return state.sortAZ ? A.localeCompare(B) : B.localeCompare(A);
+            });
+            state.items = sorted;
+        }
+
+        function applyFilter() {
+            const q = (el("searchInput").value || "").trim().toLowerCase();
+            if (!q) {
+                state.filtered = [...state.items];
+            } else {
+                state.filtered = state.items.filter(x =>
+                    (x.title || "").toLowerCase().includes(q) ||
+                    (x.snippet || "").toLowerCase().includes(q) ||
+                    (x.file || "").toLowerCase().includes(q)
+                );
+            }
+        }
+
+        function renderList() {
+            const list = el("mailList");
+            list.innerHTML = "";
+
+            el("countBadge").textContent = state.filtered.length;
+            el("statTotal").textContent = state.items.length;
+
+            state.filtered.forEach((item) => {
+                const active = state.active?.file === item.file;
+
+                const row = document.createElement("button");
+                row.type = "button";
+                row.className =
+                    "w-full text-left rounded-2xl border px-4 py-3 mb-2 transition " +
+                    (active
+                        ? "border-indigo-200 bg-indigo-50"
+                        : "border-slate-200 bg-white hover:bg-slate-50");
+
+                row.innerHTML = `
+          <div class="flex items-start justify-between gap-2">
+            <div class="min-w-0">
+              <div class="font-extrabold text-sm text-slate-900 truncate">${escapeHtml(item.title)}</div>
+              <div class="text-xs text-slate-500 mt-0.5">${escapeHtml(item.file)}</div>
+            </div>
+            <span class="shrink-0 text-[11px] font-bold px-2 py-1 rounded-full ${active ? "bg-indigo-600 text-white" : "bg-slate-100 text-slate-700 border border-slate-200"
+                    }">
+              ${active ? "Active" : "View"}
+            </span>
+          </div>
+          <div class="mt-2 text-xs leading-5 text-slate-600 line-clamp-2">
+            ${escapeHtml(item.snippet)}
+          </div>
+        `;
+
+                row.addEventListener("click", () => setActive(item.file));
+                list.appendChild(row);
+            });
+        }
+
+        function setActive(file) {
+            const item = state.items.find(x => x.file === file) || null;
+            state.active = item;
+
+            // Update header
+            el("activeTitle").textContent = item ? item.title : "Select an email";
+            el("activeMeta").textContent = item ? `File: ${item.file}` : "Preview will appear here";
+
+            // Update stats
+            el("statSelected").textContent = item ? item.file : "—";
+            el("statLen").textContent = item ? item.fullText.length : 0;
+
+            // Update preview snippet & full text
+            el("previewText").textContent = item ? item.snippet : "—";
+            el("fullText").textContent = item ? item.fullText : "—";
+
+            // Load HTML into iframe safely
+            const frame = el("viewer");
+            frame.srcdoc = item ? item.html : "<div style='font-family:Arial;padding:20px;'>Select an email from the left.</div>";
+
+            // Buttons
+            const openBtn = el("openRawBtn");
+            const copyBtn = el("copyPreviewBtn");
+            if (item) {
+                openBtn.classList.remove("hidden");
+                copyBtn.classList.remove("hidden");
+                openBtn.href = item.file;
+            } else {
+                openBtn.classList.add("hidden");
+                copyBtn.classList.add("hidden");
+                openBtn.href = "#";
+            }
+
+            renderList();
+        }
+
+        function updateStats() {
+            el("statTotal").textContent = state.items.length;
+            el("statSelected").textContent = state.active ? state.active.file : "—";
+            el("statLen").textContent = state.active ? state.active.fullText.length : 0;
+        }
+
+        function escapeHtml(str) {
+            return String(str || "")
+                .replaceAll("&", "&amp;")
+                .replaceAll("<", "&lt;")
+                .replaceAll(">", "&gt;")
+                .replaceAll('"', "&quot;")
+                .replaceAll("'", "&#039;");
+        }
+
+        // Events
+        el("searchInput").addEventListener("input", () => {
+            applyFilter();
+            renderList();
+        });
+
+        el("refreshBtn").addEventListener("click", () => {
+            loadAll();
+        });
+
+        el("sortBtn").addEventListener("click", () => {
+            state.sortAZ = !state.sortAZ;
+            el("sortBtn").textContent = state.sortAZ ? "Sort A→Z" : "Sort Z→A";
+            applySort();
+            applyFilter();
+            renderList();
+        });
+
+        el("copyPreviewBtn").addEventListener("click", async () => {
+            if (!state.active) return;
+            try {
+                await navigator.clipboard.writeText(state.active.snippet || "");
+                el("copyPreviewBtn").textContent = "Copied ✓";
+                setTimeout(() => (el("copyPreviewBtn").textContent = "Copy Preview Text"), 900);
+            } catch {
+                alert("Copy failed. Your browser may block clipboard on file://. Use localhost.");
+            }
+        });
+
+        // Init
+        loadAll().then(() => {
+            // Auto select first
+            if (state.items.length) setActive(state.items[0].file);
+        });
+    </script>
 </body>
+
 </html>
