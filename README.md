@@ -216,7 +216,7 @@ Business Globalizer
 
 
 # Email 6
-Subject: If you haven’t filed yet, read this lnow
+Subject: If you haven’t filed yet, read this now
  Preview: Don’t panic,there’s still a way to file correctly
 Subject: What to do if you’re running out of time
  Preview: The final hours are here, but you still have options
