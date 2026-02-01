@@ -182,15 +182,50 @@
         // Add more like: "7.html", "tax-offer.html"
         // const files = ["1.html", "2.html", "3.html", "4.html", "5.html"];
 
-        const files = [
+        let files = [
             "bgTaxmail/1.html",
             "bgTaxmail/2.html",
             "bgTaxmail/3.html",
             "bgTaxmail/4.html",
             "bgTaxmail/5.html",
             "bgTaxmail/6.html"
-
         ];
+
+        // Scan all folders for .html files
+        async function discoverAllFolders() {
+            const folderSet = new Set();
+            files.forEach(f => {
+                const parts = (f || '').split('/');
+                if (parts.length > 1) {
+                    folderSet.add(parts[0]);
+                }
+            });
+
+            const discovered = new Set(files);
+            for (const folder of folderSet) {
+                try {
+                    const res = await fetch(folder + "/", { cache: "no-store" });
+                    if (!res.ok) continue;
+                    const html = await res.text();
+                    
+                    // Parse HTML directory listing
+                    const doc = new DOMParser().parseFromString(html, "text/html");
+                    const links = Array.from(doc.querySelectorAll("a[href]"))
+                        .map(a => a.getAttribute("href").trim())
+                        .filter(h => h && h.toLowerCase().endsWith('.html') && !h.includes('/') && !h.startsWith('?'));
+                    
+                    links.forEach(filename => {
+                        const filepath = folder + "/" + filename;
+                        if (!discovered.has(filepath)) {
+                            discovered.add(filepath);
+                            files.push(filepath);
+                        }
+                    });
+                } catch (e) {
+                    // Folder listing failed - that's okay
+                }
+            }
+        }
 
 
         let state = {
@@ -221,6 +256,9 @@
         }
 
         async function loadAll() {
+            // First, discover new .html files from folders if possible
+            await discoverAllFolders();
+            
             // Try to fetch each file. Works on localhost / server.
             const results = [];
             for (const file of files) {
@@ -287,36 +325,85 @@
             el("countBadge").textContent = state.filtered.length;
             el("statTotal").textContent = state.items.length;
 
-            state.filtered.forEach((item) => {
-                const active = state.active?.file === item.file;
+                        // Group files by their folder path
+                        function groupFilesByFolder(items) {
+                                const map = {};
+                                items.forEach((it) => {
+                                        const parts = (it.file || "").split("/");
+                                        const folder = parts.length > 1 ? parts.slice(0, -1).join("/") : "(root)";
+                                        if (!map[folder]) map[folder] = [];
+                                        map[folder].push(it);
+                                });
+                                return map;
+                        }
 
-                const row = document.createElement("button");
-                row.type = "button";
-                row.className =
-                    "w-full text-left rounded-2xl border px-4 py-3 mb-2 transition " +
-                    (active
-                        ? "border-indigo-200 bg-indigo-50"
-                        : "border-slate-200 bg-white hover:bg-slate-50");
+                        const groups = groupFilesByFolder(state.filtered);
 
-                row.innerHTML = `
-          <div class="flex items-start justify-between gap-2">
-            <div class="min-w-0">
-              <div class="font-extrabold text-sm text-slate-900 truncate">${escapeHtml(item.title)}</div>
-              <div class="text-xs text-slate-500 mt-0.5">${escapeHtml(item.file)}</div>
-            </div>
-            <span class="shrink-0 text-[11px] font-bold px-2 py-1 rounded-full ${active ? "bg-indigo-600 text-white" : "bg-slate-100 text-slate-700 border border-slate-200"
-                    }">
-              ${active ? "Active" : "View"}
-            </span>
-          </div>
-          <div class="mt-2 text-xs leading-5 text-slate-600 line-clamp-2">
-            ${escapeHtml(item.snippet)}
-          </div>
-        `;
+                        // Render each folder header and its files (clicking folder header opens first file and toggles contents)
+                        Object.keys(groups)
+                                .sort()
+                                .forEach((folder) => {
+                                        const items = groups[folder];
+                                        const folderId = "fold-" + folder.replace(/[^a-z0-9]/gi, "_");
 
-                row.addEventListener("click", () => setActive(item.file));
-                list.appendChild(row);
-            });
+                                        const header = document.createElement("button");
+                                        header.type = "button";
+                                        header.className =
+                                                "w-full text-left rounded-2xl border px-4 py-3 mb-2 transition bg-slate-50 border-slate-200 flex items-center justify-between";
+                                        header.innerHTML = `
+                        <div class="min-w-0">
+                            <div class="font-extrabold text-sm text-slate-900 truncate">${escapeHtml(folder)}</div>
+                            <div class="text-xs text-slate-500 mt-0.5">${items.length} file(s)</div>
+                        </div>
+                        <div class="text-[11px] font-bold px-2 py-1 rounded-full bg-slate-100 text-slate-700 border border-slate-200">Open</div>
+                    `;
+
+                                        // clicking header: open first file and toggle folder contents
+                                        header.addEventListener("click", () => {
+                                            const first = items[0];
+                                            if (first) setActive(first.file);
+                                            const content = el(folderId);
+                                            if (content) content.classList.remove("hidden");
+                                        });
+
+                                        list.appendChild(header);
+
+                                        const content = document.createElement("div");
+                                        content.id = folderId;
+                                        content.className = "pl-4 mb-3";
+
+                                        items.forEach((item) => {
+                                                const active = state.active?.file === item.file;
+                                                const row = document.createElement("button");
+                                                row.type = "button";
+                                                row.className =
+                                                        "w-full text-left rounded-xl border px-3 py-2 mb-2 transition " +
+                                                        (active
+                                                                ? "border-indigo-200 bg-indigo-50"
+                                                                : "border-slate-200 bg-white hover:bg-slate-50");
+
+                                                row.innerHTML = `
+                            <div class="flex items-start justify-between gap-2">
+                                <div class="min-w-0">
+                                    <div class="font-bold text-sm text-slate-900 truncate">${escapeHtml(item.title)}</div>
+                                    <div class="text-xs text-slate-500 mt-0.5">${escapeHtml(item.file.split('/').pop())}</div>
+                                </div>
+                                <span class="shrink-0 text-[11px] font-bold px-2 py-1 rounded-full ${active ? "bg-indigo-600 text-white" : "bg-slate-100 text-slate-700 border border-slate-200"
+                                                                }">
+                                    ${active ? "Active" : "View"}
+                                </span>
+                            </div>
+                            <div class="mt-2 text-xs leading-5 text-slate-600 line-clamp-2">
+                                ${escapeHtml(item.snippet)}
+                            </div>
+                        `;
+
+                                                row.addEventListener("click", () => setActive(item.file));
+                                                content.appendChild(row);
+                                        });
+
+                                        list.appendChild(content);
+                                });
         }
 
         function setActive(file) {
